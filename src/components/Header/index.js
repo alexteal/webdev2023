@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import AuthComponent from "../Auth";
+import { useAuth } from "../Auth";
 
 function Header() {
-  const auth = AuthComponent();
+  const auth = useAuth();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(() => {
     const isAuthenticated = auth.isLoggedIn();

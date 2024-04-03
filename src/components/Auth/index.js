@@ -1,5 +1,6 @@
 import { useState } from "react";
-const AuthComponent = () => {
+
+export const useAuth = () => {
   const [users, setUsers] = useState([
     { username: "user1", password: "password1" },
     { username: "user2", password: "password2" },
@@ -25,7 +26,12 @@ const AuthComponent = () => {
   };
 
   const isLoggedIn = () => {
-    return localStorage.getItem("IsAuthenticatedToken") !== "";
+    return token !== "";
+  };
+  return {
+    login,
+    logout,
+    signup,
+    isLoggedIn,
   };
 };
-export default AuthComponent;
